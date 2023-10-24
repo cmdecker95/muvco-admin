@@ -20,46 +20,45 @@ const fullName = `${prospect.first} ${prospect.last}`;
     <h1 class="text-4xl font-bold">Prospects</h1>
     <a
       href="/prospects"
-      class="block w-fit text-neutral-700 border-b border-transparent hover:border-neutral-700 my-4"
+      class="block w-fit text-neutral-700 border-b border-transparent hover:border-neutral-700 mt-4"
       >&larr; Back to all</a
     >
   </div>
 
-  <div class="flex gap-8 flex-grow items-baseline">
-    <section
-      class="flex flex-col rounded-xl bg-slate-300 text-slate-800 p-12 my-8 flex-grow"
-    >
-      <div class="flex flex-col gap-1 mb-8">
-        <h3 class="font-bold">Name</h3>
-        <p class="leading-loose mb-10">
-          {fullName}
-        </p>
-      </div>
-      <div class="flex flex-col gap-1 mb-8">
-        <h3 class="font-bold">Email</h3>
-        <p class="leading-loose mb-10">
-          {prospect.email}
-        </p>
-      </div>
-      <div class="flex flex-col gap-1 mb-8">
-        <h3 class="font-bold">Phone (optional)</h3>
-        <p class="leading-loose mb-10">
-          {prospect.phone || "-"}
-        </p>
-      </div>
-      <div class="flex flex-col gap-1 mb-8">
-        <h3 class="font-bold">Reported Difficulty</h3>
-        <p class="leading-loose mb-10">
-          {prospect.difficulty}
-        </p>
-      </div>
-      <div class="flex flex-col gap-1 mb-8">
-        <h3 class="font-bold">Reported Injury</h3>
-        <p class="leading-loose">
-          {prospect.injury}
-        </p>
-      </div>
-    </section>
-    <ProspectForm {prospect} client:load />
-  </div>
+  <section
+    class="flex flex-col rounded-lg border border-black mx-6 mt-10 px-6 py-4"
+  >
+    <div class="flex flex-col gap-1 mb-8">
+      <h3 class="font-bold">Name</h3>
+      <p>
+        {fullName}
+      </p>
+    </div>
+    <div class="flex flex-col gap-1 mb-8">
+      <h3 class="font-bold">Email</h3>
+      <p>
+        {prospect.email}
+      </p>
+    </div>
+    <div class="flex flex-col gap-1 mb-8">
+      <h3 class="font-bold">Phone (optional)</h3>
+      <p>
+        {prospect.phone || "-"}
+      </p>
+    </div>
+    <div class="flex flex-col gap-1 mb-8">
+      <h3 class="font-bold">Reported Difficulty</h3>
+      <p class="leading-loose">
+        {prospect.difficulty}
+      </p>
+    </div>
+    <div class="flex flex-col gap-1">
+      <h3 class="font-bold">Reported Injury</h3>
+      <p class="leading-loose">
+        {prospect.injury}
+      </p>
+    </div>
+  </section>
+
+  <ProspectForm {prospect} client:load />
 </Layout>

@@ -31,29 +31,23 @@
 {:else if error}
   <p class="mx-6 my-4">Error: {error}</p>
 {:else if prospects.length > 0}
-  <table class="border-2 border-black mx-6 my-4">
-    <thead class="border-b-2 border-black bg-neutral-200">
-      <tr class="divide-x-2 divide-black text-left font-semibold">
-        <th class="px-4 py-2">Date</th>
-        <th class="px-4 py-2">Name</th>
-      </tr>
-    </thead>
-    <tbody class="divide-y-2 divide-black">
-      {#each prospects as prospect, i (prospect.id)}
-        <a
-          href={`/prospects/${prospect.id}`}
-          class={`table-row divide-x-2 divide-black hover:bg-neutral-100`}
-        >
-          <td class={`px-6 py-4`}>
-            {new Date(prospect.xata.createdAt).toLocaleDateString()}
-          </td>
-          <td class="px-6 py-4">
-            {`${prospect.first} ${prospect.last}`}
-          </td>
-        </a>
-      {/each}
-    </tbody>
-  </table>
+  <div class="flex flex-col gap-4 mx-6">
+    {#each prospects as prospect, i (prospect.id)}
+      <a
+        href={`/prospects/${prospect.id}`}
+        class={`flex flex-col gap-2 rounded-lg border border-black bg-neutral-100 hover:bg-white px-6 py-4`}
+      >
+        <span class="font-semibold">
+          {`${prospect.first} ${prospect.last}`}
+        </span>
+        {#if prospect.contacted}
+          <span class="text-green-600"> Contacted </span>
+        {:else}
+          <span class="text-neutral-600"> Not contacted </span>
+        {/if}
+      </a>
+    {/each}
+  </div>
 {:else}
   <p class="mx-6 my-4">No prospects found.</p>
 {/if}
