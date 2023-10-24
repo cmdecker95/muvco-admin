@@ -21,7 +21,7 @@ const { title, page } = Astro.props;
   </head>
   <body>
     <Navbar site={Astro.url.pathname} page={page} client:load />
-    <main class="relative translate-y-[74px]">
+    <main class="relative translate-y-[74px] pb-8">
       <slot />
     </main>
   </body>
