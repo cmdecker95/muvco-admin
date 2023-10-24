@@ -1,0 +1,18 @@
+{
+  "id": "mig_ckp2p9njmb28l9tjgdcg",
+  "parentID": "mig_ckigpdsb9p6iaep95e00",
+  "checksum": "1:2e04d8c6cdf4eea962f270d436bdcd0a5d5b6b752da571e7c20300585598f3e7",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "contacted",
+          "type": "bool",
+          "notNull": true,
+          "defaultValue": "false"
+        },
+        "table": "prospect"
+      }
+    }
+  ]
+}
