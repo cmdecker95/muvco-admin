@@ -21,7 +21,7 @@
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        to: "cmdecker95@gmail.com",
+        to: prospect.email,
         from: "test@christiandecker.dev",
         subject,
         body,
