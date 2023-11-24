@@ -27,7 +27,37 @@
   <a href="/" id="logo" class="translate-y-1"
     ><span class="text-4xl">ADMIN.</span></a
   >
-  <button on:click={toggleMenu}>
+  <div class="hidden md:flex flex-grow gap-5 items-center justify-end">
+    <div class="flex flex-col flex-grow w-full">
+      <a
+        href="/prospects"
+        class="border-b border-transparent hover:border-black text-lg duration-75"
+        >Prospects</a
+      >
+      <a
+        href="/patients"
+        class="border-b border-transparent hover:border-black text-lg duration-75"
+        >Patients</a
+      >
+      <a
+        href="/appointments"
+        class="border-b border-transparent hover:border-black text-lg duration-75"
+        >Appointments</a
+      >
+      <a
+        href="/signin"
+        class="border-2 border-black bg-white rounded-full px-3 py-2 text-center"
+        >Sign in</a
+      >
+      <a
+        href="/signup"
+        class="border-2 border-black bg-black text-white rounded-full px-3 py-2 text-center"
+        >Sign up</a
+      >
+    </div>
+  </div>
+
+  <button on:click={toggleMenu} class="md:hidden">
     <div
       class="flex gap-3 items-center px-3 py-2 rounded-full border border-neutral-700"
     >
@@ -66,12 +96,12 @@
     <div class="flex justify-between gap-5 px-6 py-4 w-full">
       <a
         href="/signin"
-        class="border-2 border-black drop-shadow-md bg-white rounded-full px-3 py-2 w-full text-center flex-grow"
+        class="border-2 border-black bg-white rounded-full px-3 py-2 w-full text-center flex-grow"
         >Sign in</a
       >
       <a
         href="/signup"
-        class="border-2 border-black drop-shadow-md bg-black text-white rounded-full px-3 py-2 w-full text-center flex-grow"
+        class="border-2 border-black bg-black text-white rounded-full px-3 py-2 w-full text-center flex-grow"
         >Sign up</a
       >
     </div>
